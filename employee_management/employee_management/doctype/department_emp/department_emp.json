@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:department_name",
  "creation": "2024-11-30 19:48:52.643024",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -22,25 +23,29 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Department Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "number_of_employees",
    "fieldtype": "Int",
-   "label": "Number of Employees"
+   "label": "Number of Employees",
+   "read_only": 1
   },
   {
    "fieldname": "number_of_projects",
    "fieldtype": "Int",
-   "label": "Number of Projects"
+   "label": "Number of Projects",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-30 20:37:50.142812",
+ "modified": "2024-12-03 00:19:42.114015",
  "modified_by": "Administrator",
  "module": "Employee Management",
  "name": "Department Emp",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:company_name",
  "creation": "2024-11-30 19:49:11.164327",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,30 +17,35 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Company name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "number_of_departments",
    "fieldtype": "Int",
-   "label": "Number of Departments"
+   "label": "Number of Departments",
+   "read_only": 1
   },
   {
    "fieldname": "number_of_employees",
    "fieldtype": "Int",
-   "label": "Number of Employees"
+   "label": "Number of Employees",
+   "read_only": 1
   },
   {
    "fieldname": "number_of_projects",
    "fieldtype": "Int",
-   "label": "Number of Projects"
+   "label": "Number of Projects",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-30 20:24:41.663257",
+ "modified": "2024-12-03 00:06:32.469585",
  "modified_by": "Administrator",
  "module": "Employee Management",
  "name": "Company Emp",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

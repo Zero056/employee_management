@@ -3,9 +3,13 @@
 
 frappe.ui.form.on("Employee Emp", {
     refresh: function (frm) {
+        if (frm.doc.employee_status != "Hired") {
+
         frm.add_custom_button("Action", () => {
             show_action_dialog(frm);
         });
+        }
+
         if (frm.doc.employee_status == "Hired") {
             frm.set_df_property('hired_on', 'reqd', 1); 
             frm.set_df_property('hired_on', 'hidden', 0);
@@ -20,7 +24,7 @@ frappe.ui.form.on("Employee Emp", {
             ///////////////////////
             frm.set_df_property('days_employed', 'hidden', 1);
             //////////////////////
-            frm.set_df_property('number_of_assigned_projects', 'hidden', 0);
+            frm.set_df_property('number_of_assigned_projects', 'hidden', 1);
             ///////////////////////
         }
     }
