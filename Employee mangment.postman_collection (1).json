@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "7563543b-8900-4796-a0f9-e6090c04c83c",
+		"name": "Employee mangment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19970778",
+		"_collection_link": "https://erp-team-0907.postman.co/workspace/e9bacf41-4b39-4e95-8b1c-130f629ca746/collection/19970778-7563543b-8900-4796-a0f9-e6090c04c83c?action=share&source=collection_link&creator=19970778"
+	},
+	"item": [
+		{
+			"name": "Get Company",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.get_company",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.get_company"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usr\": \"zoma@gmail.com\",\r\n    \"pwd\": \"123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.login?username=za@gmail.com&password=123",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "za@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.get_department?",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.get_department"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.create_employee?email_address=Moza@mail.com&company=rfkcslh2tc&employee_name=Galal&employee_status=Application Received&department=rg5tq90vdm&designation=Hr&address=Helwan&mobile_number=0101001001",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.create_employee"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "email_address",
+							"value": "Moza@mail.com"
+						},
+						{
+							"key": "company",
+							"value": "rfkcslh2tc"
+						},
+						{
+							"key": "employee_name",
+							"value": "Galal"
+						},
+						{
+							"key": "employee_status",
+							"value": "Application Received"
+						},
+						{
+							"key": "hired_on",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "department",
+							"value": "rg5tq90vdm"
+						},
+						{
+							"key": "designation",
+							"value": "Hr"
+						},
+						{
+							"key": "address",
+							"value": "Helwan"
+						},
+						{
+							"key": "mobile_number",
+							"value": "0101001001"
+						},
+						{
+							"key": "days_employed",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "number_of_assigned_projects",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.get_employee?employee_id=tasbppqqkt",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.get_employee"
+					],
+					"query": [
+						{
+							"key": "employee_id",
+							"value": "tasbppqqkt"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Employee",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.update_employee?employee_id=t1al91ed3f&designation=Backend",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.update_employee"
+					],
+					"query": [
+						{
+							"key": "employee_id",
+							"value": "t1al91ed3f"
+						},
+						{
+							"key": "designation",
+							"value": "Backend"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.delete_project?employee_id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.delete_project"
+					],
+					"query": [
+						{
+							"key": "employee_id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Project",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.create_project?company=rfkcslh2tc&department=rg5tq90vdm&project_name=Up&description= &start_date=2023-12-20&end_date=2024-10-20&assigned_employees=[{\"employee\":\"tasbppqqkt\"},{\"employee\":\"t1al91ed3f\"}]",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.create_project"
+					],
+					"query": [
+						{
+							"key": "company",
+							"value": "rfkcslh2tc"
+						},
+						{
+							"key": "department",
+							"value": "rg5tq90vdm"
+						},
+						{
+							"key": "project_name",
+							"value": "Up"
+						},
+						{
+							"key": "description",
+							"value": " "
+						},
+						{
+							"key": "start_date",
+							"value": "2023-12-20"
+						},
+						{
+							"key": "end_date",
+							"value": "2024-10-20"
+						},
+						{
+							"key": "assigned_employees",
+							"value": "[{\"employee\":\"tasbppqqkt\"},{\"employee\":\"t1al91ed3f\"}]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Project",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.get_project?project_id=s07tjf42tj",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.get_project"
+					],
+					"query": [
+						{
+							"key": "project_id",
+							"value": "s07tjf42tj"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Project",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.update_project?project_id=s07tjf42tj&description=osdfldssrejklt",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.update_project"
+					],
+					"query": [
+						{
+							"key": "project_id",
+							"value": "s07tjf42tj"
+						},
+						{
+							"key": "description",
+							"value": "osdfldssrejklt"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Project",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/method/employee_management.api.delete_employee?employee_id=o6s1b0qgbt",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"method",
+						"employee_management.api.delete_employee"
+					],
+					"query": [
+						{
+							"key": "employee_id",
+							"value": "o6s1b0qgbt"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
