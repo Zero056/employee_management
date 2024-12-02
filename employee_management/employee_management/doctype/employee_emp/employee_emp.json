@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:employee_name",
  "creation": "2024-11-30 19:48:34.791847",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -40,7 +41,8 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Employee Name",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "email_address",
@@ -77,13 +79,15 @@
    "depends_on": "eval:doc.employee_status==\"Hired\"",
    "fieldname": "days_employed",
    "fieldtype": "Data",
-   "label": "Days Employed"
+   "label": "Days Employed",
+   "read_only": 1
   },
   {
    "depends_on": "eval:doc.employee_status==\"Hired\"",
    "fieldname": "number_of_assigned_projects",
    "fieldtype": "Data",
-   "label": "Number of Assigned Projects"
+   "label": "Number of Assigned Projects",
+   "read_only": 1
   },
   {
    "fieldname": "department",
@@ -94,10 +98,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-02 21:19:14.427431",
+ "modified": "2024-12-03 00:20:51.109638",
  "modified_by": "Administrator",
  "module": "Employee Management",
  "name": "Employee Emp",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

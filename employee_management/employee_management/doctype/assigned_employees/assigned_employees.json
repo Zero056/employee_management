@@ -13,13 +13,14 @@
    "fieldname": "employee",
    "fieldtype": "Link",
    "label": "Employee",
+   "link_filters": "[[\"Employee Emp\",\"employee_status\",\"=\",\"Hired\"]]",
    "options": "Employee Emp"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-11-30 21:09:16.610979",
+ "modified": "2024-12-03 00:22:20.404908",
  "modified_by": "Administrator",
  "module": "Employee Management",
  "name": "Assigned Employees",

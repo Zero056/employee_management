@@ -20,4 +20,5 @@ def update_company_counts(company_id):
     
     company.number_of_departments = department_count
     company.save()
+    frappe.db.commit()
 

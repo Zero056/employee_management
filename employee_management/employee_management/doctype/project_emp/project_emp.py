@@ -39,6 +39,7 @@ def update_company_counts(company_id):
 
     company.number_of_projects = project_count
     company.save()
+    frappe.db.commit()
 
 
 @frappe.whitelist()
@@ -53,3 +54,4 @@ def update_department_counts(department_id):
 
     department.number_of_projects = project_count
     department.save()
+    frappe.db.commit()

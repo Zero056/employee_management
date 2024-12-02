@@ -30,15 +30,13 @@ class EmployeeEmp(Document):
             frappe.throw("Invalid phone number format.")
         
         if self.hired_on and self.employee_status == "Hired":
-            # Ensure hired_on is a datetime object if it is not already
             if isinstance(self.hired_on, str):
                 hired_on_date = datetime.strptime(self.hired_on, "%Y-%m-%d")
             else:
-                # If it's a date, convert it to datetime
-                if isinstance(self.hired_on, date):  # Use 'date' from datetime module
+                if isinstance(self.hired_on, date): 
                     hired_on_date = datetime.combine(self.hired_on, datetime.min.time())
                 else:
-                    hired_on_date = self.hired_on  # Already a datetime object
+                    hired_on_date = self.hired_on 
             
             today = datetime.today()
             days_with_company = (today - hired_on_date).days
@@ -46,15 +44,13 @@ class EmployeeEmp(Document):
         
         if self.hired_on:
             try:
-                # Ensure hired_on is a datetime object if it is not already
                 if isinstance(self.hired_on, str):
                     hired_date = datetime.strptime(self.hired_on, "%Y-%m-%d")
                 else:
-                    # If it's a date, convert it to datetime
-                    if isinstance(self.hired_on, date):  # Use 'date' from datetime module
+                    if isinstance(self.hired_on, date):  
                         hired_date = datetime.combine(self.hired_on, datetime.min.time())
                     else:
-                        hired_date = self.hired_on  # Already a datetime object
+                        hired_date = self.hired_on 
                 
                 today = datetime.today()
                 self.days_employed = (today - hired_date).days
@@ -99,6 +95,7 @@ def update_company_counts(company_id):
     
     company.number_of_employees = employee_count
     company.save()
+    frappe.db.commit()
 
 @frappe.whitelist()
 def update_department_counts(department_id):
@@ -112,6 +109,8 @@ def update_department_counts(department_id):
 
     department.number_of_employees = employee_count
     department.save()
+    frappe.db.commit()
+
 
 
 
