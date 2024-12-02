@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-30 19:48:34.791847",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "employee_status",
+  "employee_name",
+  "email_address",
+  "mobile_number",
+  "column_break_rcnh",
+  "department",
+  "address",
+  "designation",
+  "hired_on",
+  "days_employed",
+  "number_of_assigned_projects"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company Emp",
+   "reqd": 1
+  },
+  {
+   "fieldname": "employee_status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Employee Status",
+   "options": "Application Received\nInterview Scheduled\nHired\nNot Accepted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email_address",
+   "fieldtype": "Data",
+   "label": "Email Address"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "column_break_rcnh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Data",
+   "label": "Designation"
+  },
+  {
+   "depends_on": "eval:doc.employee_status==\"Hired\"",
+   "fieldname": "hired_on",
+   "fieldtype": "Date",
+   "label": "Hired On",
+   "mandatory_depends_on": "eval:doc.employee_status==\"Hired\""
+  },
+  {
+   "depends_on": "eval:doc.employee_status==\"Hired\"",
+   "fieldname": "days_employed",
+   "fieldtype": "Data",
+   "label": "Days Employed"
+  },
+  {
+   "depends_on": "eval:doc.employee_status==\"Hired\"",
+   "fieldname": "number_of_assigned_projects",
+   "fieldtype": "Data",
+   "label": "Number of Assigned Projects"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department Emp"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-02 21:19:14.427431",
+ "modified_by": "Administrator",
+ "module": "Employee Management",
+ "name": "Employee Emp",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "custom": 1,
+   "title": "Employee Status"
+  }
+ ]
+}
