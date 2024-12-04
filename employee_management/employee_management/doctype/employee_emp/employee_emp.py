@@ -19,7 +19,7 @@ class EmployeeEmp(Document):
 
 
     def before_validate(self):
-        validate_employee_status(self)
+        # validate_employee_status(self)
         
         email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
         if self.email_address and not re.match(email_regex, self.email_address):
@@ -72,17 +72,17 @@ class EmployeeEmp(Document):
 
 
 
-def validate_employee_status(doc, method=None):
-    previous_status = frappe.db.get_value("Employee Emp", doc.name, "employee_status")
-    new_status = doc.employee_status
+# def validate_employee_status(doc, method=None):
+#     previous_status = frappe.db.get_value("Employee Emp", doc.name, "employee_status")
+#     new_status = doc.employee_status
 
-    if previous_status == new_status:
-        return
+#     if previous_status == new_status:
+#         return
 
-    if previous_status and new_status not in ALLOWED_TRANSITIONS.get(previous_status, []):
-        frappe.throw(
-            f"Invalid status transition from '{previous_status}' to '{new_status}'."
-        )
+#     if previous_status and new_status not in ALLOWED_TRANSITIONS.get(previous_status, []):
+#         frappe.throw(
+#             f"Invalid status transition from '{previous_status}' to '{new_status}'."
+#         )
 
 @frappe.whitelist()
 def update_company_counts(company_id):
